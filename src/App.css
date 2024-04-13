@@ -1,3 +1,5 @@
+@import './settings.css';
+
 .App {
   text-align: center;
 }
@@ -13,15 +15,24 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  height: 75px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  border-bottom: solid 3px var(--color-pink);
+  margin: 5px 15px 0px 15px
+}
+
+.nameHeader {
+  display: flex;
+  font-size: calc(10px + 4vmin);
+  color: var(--color-white);
+  margin-bottom: 5px;
+  flex-direction: column-reverse;
+  align-content: baseline;
 }
 
 .App-link {
