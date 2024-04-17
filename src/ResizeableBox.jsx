@@ -3,7 +3,6 @@ import {useState, useEffect, useRef} from 'react';
 const ResizeableBox = ({horizontal, element1MinSize, element2MinSize}) => {
 
     const refContainer = useRef();
-    const [isMouseOver, setIsMouseOver] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
     const [handlePosition, setHandlePosition] = useState('50%');
     const [size, setSize] = useState({
@@ -15,31 +14,16 @@ const ResizeableBox = ({horizontal, element1MinSize, element2MinSize}) => {
         top: 0
     });
 
-    function onMouseDown() {
-        if(!isMouseOver) return;
-        
-        setIsDragging(true);    
-        console.log(`down`);  
-    }
-
-
-    function onMouseEnter(){
-        setIsMouseOver(true);
-        console.log(`enter`);
-
-    }
-    function onMouseExit(){
-        setIsMouseOver(false);
-        console.log(`exit`);
-        
+    function onMouseOrTouchDown() {
+        setIsDragging(true);  
     }
 
     useEffect(() => {
         if (refContainer.current) {
             const boundingRect = refContainer.current.getBoundingClientRect();
             setOffset({
-                left: boundingRect.top,
-                top: boundingRect.left
+                left: boundingRect.left,
+                top: boundingRect.top
 
             });
             setSize({
@@ -47,44 +31,51 @@ const ResizeableBox = ({horizontal, element1MinSize, element2MinSize}) => {
                 height: boundingRect.height
 
             });
-            console.log(`${boundingRect.top} ${boundingRect.width}`)
         }   
     }, []);
 
     useEffect(() => {  
 
-        function onMouseMove(event) {
+        function CalculateHandlePosition(mouse){  
             if(!isDragging) return;
 
             let relative = horizontal ? 
-                            (event.clientX - offset['top']) / size['width'] :
-                            (event.clientY - offset['left']) / size['height'];
+                    (mouse.clientX - offset['left']) / size['width'] :
+                    (mouse.clientY - offset['top']) / size['height'];
             relative = Math.max(relative, element1MinSize);
             relative = Math.min(relative, 1 - element2MinSize);
             const handle = `${Math.round(relative * 100)}%`;
             setHandlePosition(handle);
-            console.log(handle)
-
         }
-        function onMouseUp(event){
+
+        function onMouseMove(event) {
+            CalculateHandlePosition(event);
+        }
+
+        function onTouchMove(event) {
+            CalculateHandlePosition(event.touches[0]);
+        }
+
+
+        function onMouseOrTouchUp(){
             setIsDragging(false);
-            console.log(`up`);
         }
 
-
+        // todo: only subscribe to events depending on platform
         window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('mouseup', onMouseUp)
+        window.addEventListener('touchmove', onTouchMove);
+        window.addEventListener('mouseup', onMouseOrTouchUp);
+        window.addEventListener('touchend', onMouseOrTouchUp);
         return () => {
             window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('mouseup', onMouseUp)
+            window.removeEventListener('touchmove', onTouchMove);
+            window.removeEventListener('mouseup', onMouseOrTouchUp);
+            window.removeEventListener('touchend', onMouseOrTouchUp);
         };
-    }, [isDragging, isMouseOver, offset, size]);
+    }, [isDragging, offset, size, element1MinSize, element2MinSize, horizontal]);
 
     return (
         <div className='resize'
-        onPointerEnter={onMouseEnter}
-        onPointerLeave={onMouseExit}
-        onMouseDown={onMouseDown}
         ref={refContainer}
         style={{
             display: 'flex',
@@ -98,12 +89,10 @@ const ResizeableBox = ({horizontal, element1MinSize, element2MinSize}) => {
                 <div style={{backgroundColor: '#555555', width: handlePosition}}>
                 </div>
                 <div 
-                    onPointerEnter={onMouseEnter}
-                    onPointerLeave={onMouseExit}
-                    onMouseDown={onMouseDown}
+                    onMouseDown={onMouseOrTouchDown}
+                    onTouchStart={onMouseOrTouchDown}
                     style={{backgroundColor: '#000000', width: '15px'}} />
                 <div style={{backgroundColor: '#FFFFFF', flex: '1'}}>
-                    {handlePosition}
                 </div>
             </>
         ) : 
@@ -111,12 +100,10 @@ const ResizeableBox = ({horizontal, element1MinSize, element2MinSize}) => {
             <div style={{backgroundColor: '#555555', height: handlePosition}}>
             </div>
             <div 
-                onPointerEnter={onMouseEnter}
-                onPointerLeave={onMouseExit}
-                onMouseDown={onMouseDown}
+                onMouseDown={onMouseOrTouchDown}
+                onTouchStart={onMouseOrTouchDown}
                 style={{backgroundColor: '#000000', height: '15px'}} />
             <div style={{backgroundColor: '#FFFFFF', flex: '1'}}>
-                {handlePosition}
             </div>
         </>
         }
