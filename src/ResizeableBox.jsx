@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 
-const ResizeableBox = ({horizontal, element1MinSize, element2MinSize}) => {
+const ResizeableBox = ({horizontal, element1, element2, element1MinSize, element2MinSize}) => {
 
     const refContainer = useRef();
     const [isDragging, setIsDragging] = useState(false);
@@ -87,23 +87,27 @@ const ResizeableBox = ({horizontal, element1MinSize, element2MinSize}) => {
             { horizontal ? (
             <>
                 <div style={{backgroundColor: '#555555', width: handlePosition}}>
+                    {element1}
                 </div>
                 <div 
                     onMouseDown={onMouseOrTouchDown}
                     onTouchStart={onMouseOrTouchDown}
                     style={{backgroundColor: '#000000', width: '15px'}} />
                 <div style={{backgroundColor: '#FFFFFF', flex: '1'}}>
+                    {element2}
                 </div>
             </>
         ) : 
         <>
             <div style={{backgroundColor: '#555555', height: handlePosition}}>
+                {element1}
             </div>
             <div 
                 onMouseDown={onMouseOrTouchDown}
                 onTouchStart={onMouseOrTouchDown}
                 style={{backgroundColor: '#000000', height: '15px'}} />
-            <div style={{backgroundColor: '#FFFFFF', flex: '1'}}>
+            <div style={{backgroundColor: '#FFFFFF', flex: '1'}}>     
+                {element2}
             </div>
         </>
         }

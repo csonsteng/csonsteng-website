@@ -17,7 +17,11 @@ function App() {
       style={{
         flex: '1',
         width: '100%'
-      }}/>
+      }}
+      element1={<span>ELEMENT 1</span>}
+      element2={<span>ELEMENT 2</span>}
+      
+      />
     </div>
   );
 }
