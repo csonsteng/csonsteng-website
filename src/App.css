@@ -1,7 +1,11 @@
 @import './settings.css';
 
+body > #root > div {
+  height: 100vh;
+}
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -16,21 +20,19 @@
 }
 
 .header{
-  height: 75px;
+  height: '100%';
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
   align-content: stretch;
   border-bottom: solid 3px var(--color-pink);
-  margin: 5px 15px 0px 15px
 }
 
 .nameHeader {
   display: flex;
   font-size: calc(10px + 4vmin);
   color: var(--color-white);
-  margin-bottom: 5px;
   flex-direction: column-reverse;
   align-content: baseline;
 }
@@ -46,12 +48,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.resize{
-  border-width: 2px;
-  border-style: solid;
-  border-color:white;
-  width: 50%;
-  height: 50%;
 }
