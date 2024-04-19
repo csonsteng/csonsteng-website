@@ -1,7 +1,11 @@
 @import './settings.css';
 
+html{
+  overscroll-behavior: none;
+}
 body > #root > div {
-  height: 100vh;
+  height: 100vh; 
+  overscroll-behavior: none;
 }
 .App {
   text-align: center;
