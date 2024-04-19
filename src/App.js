@@ -1,6 +1,9 @@
 import './App.css';
 import WebHeader from './WebHeader';
 import ResizeableBox from './ResizeableBox';
+import ProjectSelectorView from './ProjectSelectorView';
+import ProjectView from './ProjectView';
+import AboutView from './AboutView';
 
 function App() {
   return (
@@ -8,20 +11,15 @@ function App() {
       display: 'flex',
       flexDirection: 'column',
     }}>
-      <WebHeader 
-      style={{
-      height: '75px',
-      width: '100%'
-    }}/>
-      <ResizeableBox horizontal={true} element1MinSize={0.1} element2MinSize={0.4}
-      style={{
-        flex: '1',
-        width: '100%'
-      }}
-      element1={<span>ELEMENT 1</span>}
-      element2={<span>ELEMENT 2</span>}
-      
-      />
+      <WebHeader />
+      <ResizeableBox horizontal={true} element1MinSize={0.1} element2MinSize={0.5}
+      element1={<ProjectSelectorView />}
+      element2={
+        <ResizeableBox horizontal={false} element1MinSize={0.5} element2MinSize={0.1}
+        element1={<ProjectView />}
+        element2={<AboutView />}
+        />
+      }/>
     </div>
   );
 }
