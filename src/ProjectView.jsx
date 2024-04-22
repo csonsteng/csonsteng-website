@@ -6,7 +6,7 @@ const ProjectView = () => {
             width: '100%',
             height: '100%',
             backgroundColor: 'green',
-        }}>Show Selected Project Here
+        }}>
         <UnityView /></div>
     )
 }

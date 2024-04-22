@@ -45,6 +45,7 @@ const ResizeableBox = ({horizontal, element1, element2, element1MinSize, element
             relative = Math.max(relative, element1MinSize);
             relative = Math.min(relative, 1 - element2MinSize);
             const handle = `${Math.round(relative * 100)}%`;
+            //console.log(handle);
             setHandlePosition(handle);
         }
 
