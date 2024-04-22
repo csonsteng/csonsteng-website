@@ -15,7 +15,7 @@ function App() {
       <ResizeableBox horizontal={true} element1MinSize={0.1} element2MinSize={0.5}
       element1={<ProjectSelectorView />}
       element2={
-        <ResizeableBox horizontal={false} element1MinSize={0.5} element2MinSize={0.1}
+        <ResizeableBox horizontal={false} element1MinSize={0.3} element2MinSize={0.1}
         element1={<ProjectView />}
         element2={<AboutView />}
         />
