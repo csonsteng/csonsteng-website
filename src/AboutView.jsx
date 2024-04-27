@@ -1,11 +1,11 @@
 import React from "react";
-const AboutView = () => {
+const AboutView = ({selectedFile}) => {
     return (
         <div style={{
             width: '100%',
             height: '100%',
             backgroundColor: 'yellow',
-        }}>Here is some info about the current project</div>
+        }}>{selectedFile ? selectedFile["content"] : null}</div>
     )
 }
 

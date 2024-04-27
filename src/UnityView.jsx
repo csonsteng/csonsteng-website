@@ -1,6 +1,6 @@
 import { Unity, useUnityContext } from "react-unity-webgl";
 const UnityView = () => {
-    const buildUrl = "http://localhost:4000/unity";
+    const buildUrl = "https://csonsteng-api-a3fc6c3c7562.herokuapp.com/unity";
     const { unityProvider } = useUnityContext({
         loaderUrl: buildUrl + "/Builds.loader.js",
         dataUrl: buildUrl + "/Builds.data.unityweb",

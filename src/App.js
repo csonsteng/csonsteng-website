@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import './App.css';
 import WebHeader from './WebHeader';
 import ResizeableBox from './ResizeableBox';
@@ -6,6 +7,13 @@ import ProjectView from './ProjectView';
 import AboutView from './AboutView';
 
 function App() {
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  function selectFile(file) {
+    setSelectedFile(file);
+  }
+
   return (
     <div className="App" style={{
       display: 'flex',
@@ -13,11 +21,11 @@ function App() {
     }}>
       <WebHeader />
       <ResizeableBox horizontal={true} element1MinSize={0.1} element2MinSize={0.5}
-      element1={<ProjectSelectorView />}
+      element1={<ProjectSelectorView selectFile={selectFile}/>}
       element2={
         <ResizeableBox horizontal={false} element1MinSize={0.3} element2MinSize={0.1}
-        element1={<ProjectView />}
-        element2={<AboutView />}
+        element1={<ProjectView  selectedFile={selectedFile}/>}
+        element2={<AboutView selectedFile={selectedFile}/>}
         />
       }/>
     </div>

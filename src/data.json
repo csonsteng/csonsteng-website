@@ -1,0 +1,155 @@
+[
+    {
+        "name": "README",
+        "fileType": "text",
+        "year": 2024,
+        "content": "About Me"
+    },
+    {
+        "name": "Resume",
+        "fileType": "pdf",
+        "year": 2024,
+        "content": "About Resume"
+    },
+    {
+        "name": "Games",
+        "fileType": "folder",
+        "content": 
+        [
+            {
+                "name": "Storkdle",
+                "fileType": "react",
+                "year": 2024,
+                "content": "Info about Storkdle"
+            },
+            {
+                "name": "GemPuzzle",
+                "fileType": "unity",
+                "year": 2021,
+                "content": "Info about Gem Puzzle"
+            },
+            {
+                "name": "Decommision",
+                "fileType": "unity",
+                "year": 2021,
+                "content": "Info about Decommision"
+            },
+            {
+                "name": "OfficeHell",
+                "fileType": "unity",
+                "year": 2020,
+                "content": "Info about Office Hell"
+            },
+            {
+                "name": "PsionicSquish",
+                "fileType": "unity",
+                "year": 2022,
+                "content": "Info about Psionic Squish"
+            },
+            {
+                "name": "Labryinth",
+                "fileType": "unity",
+                "year": 2023,
+                "content": "Info about Labryinth"
+            },
+            {
+                "name": "MountTucker",
+                "fileType": "unity",
+                "year": 2020,
+                "content": "Info about Mount Tucker"
+            },
+            {
+                "name": "Chess",
+                "fileType": "unity",
+                "year": 2021,
+                "content": "Info about Chess"
+            }
+        ]
+    },
+    {
+        "name": "TTRPG",
+        "fileType": "folder",
+        "content": 
+        [
+            {
+                "name": "Haefallia",
+                "fileType": "pdf",
+                "year": 2022,
+                "content": "Info about Haefallia"
+            },
+            {
+                "name": "Goravin",
+                "fileType": "pdf",
+                "year": 2019,
+                "content": "Info about Goravin"
+            },
+            {
+                "name": "Maps",
+                "fileType": "folder",
+                "content": 
+                [
+                    {
+                        "name": "NEGalinndan",
+                        "fileType": "jpg",
+                        "year": 2020,
+                        "content": "Info about NEGalinndan"
+                    },{
+                        "name": "NWGalinndan",
+                        "fileType": "jpg",
+                        "year": 2020,
+                        "content": "Info about NWGalinndan"
+                    },
+                    {
+                        "name": "NWKuali",
+                        "fileType": "jpg",
+                        "year": 2020,
+                        "content": "Info about NWKuali"
+                    },
+                    {
+                        "name": "Kuali-Galinndan",
+                        "fileType": "jpg",
+                        "year": 2020,
+                        "content": "Info about Kuali-Galinndan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "EmploymentHistory",
+        "fileType": "folder",
+        "content": 
+        [
+            {
+                "name": "Internships",
+                "fileType": "txt",
+                "year": 2012,
+                "content": "About Internships"
+            },
+            {
+                "name": "AltechAerospace",
+                "fileType": "txt",
+                "year": 2014,
+                "content": "About Altech"
+            },
+            {
+                "name": "DigitTop",
+                "fileType": "txt",
+                "year": 2018,
+                "content": "About Altech"
+            },
+            {
+                "name": "DropBearsGames",
+                "fileType": "txt",
+                "year": 2020,
+                "content": "About DropBears"
+            },
+            {
+                "name": "Kodable",
+                "fileType": "txt",
+                "year": 2022,
+                "content": "About Kodable"
+            }
+        ]
+    }
+]
