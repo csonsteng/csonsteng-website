@@ -1,7 +1,7 @@
 [
     {
-        "name": "README",
-        "fileName": "README",
+        "name": "Readme",
+        "fileName": "Readme",
         "fileType": "md",
         "year": 2024,
         "content": "About Me"
@@ -104,12 +104,14 @@
                         "name": "NEGalinndan",
                         "fileName": "NEGalinndan",
                         "fileType": "jpg",
+                        "alt": "Custom D&D Region Map",
                         "year": 2020,
                         "content": "Info about NEGalinndan"
                     },{
                         "name": "NWGalinndan",
                         "fileName": "NWGalinndan",
                         "fileType": "jpg",
+                        "alt": "Custom D&D Region Map",
                         "year": 2020,
                         "content": "Info about NWGalinndan"
                     },
@@ -117,6 +119,7 @@
                         "name": "NWKuali",
                         "fileName": "NWKuali",
                         "fileType": "jpg",
+                        "alt": "Custom D&D Region Map",
                         "year": 2020,
                         "content": "Info about NWKuali"
                     },
@@ -124,6 +127,7 @@
                         "name": "Kuali-Galinndan",
                         "fileName": "Kuali-Galinndan",
                         "fileType": "jpg",
+                        "alt": "Custom D&D Region Map",
                         "year": 2020,
                         "content": "Info about Kuali-Galinndan"
                     }
@@ -145,21 +149,21 @@
             },
             {
                 "name": "AltechAerospace",
-                "fileName": "AltechAerospace",
+                "fileName": "Altech",
                 "fileType": "md",
                 "year": 2014,
                 "content": "About Altech"
             },
             {
-                "name": "DigitTop",
-                "fileName": "DigitTop",
+                "name": "DigiTop",
+                "fileName": "DigiTop",
                 "fileType": "md",
                 "year": 2018,
-                "content": "About DigitTop"
+                "content": "About DigiTop"
             },
             {
                 "name": "DropBearsGames",
-                "fileName": "DropBearsGames",
+                "fileName": "DropBears",
                 "fileType": "md",
                 "year": 2020,
                 "content": "About DropBears"

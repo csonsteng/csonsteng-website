@@ -45,7 +45,7 @@ const ProjectSelectorView = ({selectFile}) => {
         if(selectedFile !== null) return;
         for (var i = 0; i < data.length; i++){
             let file = data[i];
-            if(file["name"] === "README"){
+            if(file["name"] === "Readme"){
                 setSelectedFile(file);
                 selectFile(file);
                 return;

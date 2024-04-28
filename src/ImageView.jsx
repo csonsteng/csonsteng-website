@@ -10,6 +10,7 @@ const ImageView = ({selectedFile}) => {
             width: 'auto',
             height: 'auto',
         }}
+        alt={selectedFile["alt"]}
         src={`${process.env.REACT_APP_CDN_URL}img/${selectedFile["fileName"]}.${selectedFile["fileType"]}`}/></div>
     )
 }

@@ -8,6 +8,7 @@ const PDFView = ({selectedFile}) => {
             width: '100%',
             height: '100%',
         }}
+        title = {selectedFile["fileName"]}
         src={`${process.env.REACT_APP_CDN_URL}pdf/${selectedFile["fileName"]}.pdf`}/></div>
     )
 }
