@@ -12,7 +12,7 @@ const ProjectSelectorView = ({selectFile}) => {
     }
 
     function unWrapFile(file, indent, index){
-        if(file["fileType"] === "folder"){
+        if(file["fileType"] === "dir"){
             return (
                 <>
                 {displayFile(file, indent, index)}
@@ -27,8 +27,15 @@ const ProjectSelectorView = ({selectFile}) => {
 
     function displayFile(file, indent, index){  
         return (
-            <p onClick={() => {    
-                if(file["fileType"] === "folder"){  
+            <p 
+            style={{
+                textAlign: 'left',
+                userSelect: 'none',
+                cursor: 'pointer'
+            }}
+            
+            onClick={() => {    
+                if(file["fileType"] === "dir"){  
                     setFolderStates(previous => ({
                         ...previous,
                         [index]: !previous[index]
@@ -37,7 +44,7 @@ const ProjectSelectorView = ({selectFile}) => {
                     setSelectedFile(file);
                     selectFile(file);
                 }
-            }}>{[...Array(indent)].map((_) => ">")}{file["name"]}.{file["fileType"]}</p>
+            }}><pre>{[...Array(indent)].map((_) => '  ')}{file["name"]}.{file["fileType"]}</pre></p>
         )
     }
 
@@ -62,14 +69,14 @@ const ProjectSelectorView = ({selectFile}) => {
             initialFolderStates[index] = false;
             for (var i = 0; i < file["content"].length; i++){
                 let subFile = file["content"][i];
-                if(subFile["fileType"] !== "folder") continue;
+                if(subFile["fileType"] !== "dir") continue;
                 setInitialFolderState(subFile, index, i);          
             }
         }
 
         for (var i = 0; i < data.length; i++){
             let file = data[i];
-            if(file["fileType"] !== "folder") continue;
+            if(file["fileType"] !== "dir") continue;
             setInitialFolderState(file, 0, i);          
         }
         setFolderStates(initialFolderStates);
@@ -77,10 +84,10 @@ const ProjectSelectorView = ({selectFile}) => {
     
     return (
         <div style={{
-            width: '100%',
+            width: '80%',
             height: '100%',
-            backgroundColor: 'blue',
-        }}><span>Projects</span><div>{unWrapData()}</div></div>
+            marginLeft: '35px'
+        }}>{unWrapData()}</div>
     )
 }
 

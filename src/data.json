@@ -15,7 +15,7 @@
     },
     {
         "name": "Games",
-        "fileType": "folder",
+        "fileType": "dir",
         "content": 
         [
             {
@@ -78,7 +78,7 @@
     },
     {
         "name": "TTRPG",
-        "fileType": "folder",
+        "fileType": "dir",
         "content": 
         [
             {
@@ -97,7 +97,7 @@
             },
             {
                 "name": "Maps",
-                "fileType": "folder",
+                "fileType": "dir",
                 "content": 
                 [
                     {
@@ -137,7 +137,7 @@
     },
     {
         "name": "EmploymentHistory",
-        "fileType": "folder",
+        "fileType": "dir",
         "content": 
         [
             {

@@ -86,20 +86,20 @@ const ResizeableBox = ({horizontal, element1, element2, element1MinSize, element
 
             { horizontal ? (
             <>
-                <div style={{backgroundColor: '#555555', width: handlePosition}}>
+                <div style={{width: handlePosition}}>
                     {element1}
                 </div>
                 <div className='resizeHandle' direction='col'
                     onMouseDown={onMouseOrTouchDown}
                     onTouchStart={onMouseOrTouchDown}
                     style={{backgroundColor: '#000000', width: '15px'}} />
-                <div style={{backgroundColor: '#FFFFFF', flex: '1'}}>
+                <div style={{flex: '1'}}>
                     {element2}
                 </div>
             </>
         ) : 
         <>
-            <div style={{backgroundColor: '#555555', height: handlePosition}}>
+            <div style={{height: handlePosition}}>
                 {element1}
             </div>
             <div className='resizeHandle' direction='row'
@@ -108,7 +108,7 @@ const ResizeableBox = ({horizontal, element1, element2, element1MinSize, element
                 style={{backgroundColor: '#000000', 
                 height: '15px'
                 }} />
-            <div style={{backgroundColor: '#FFFFFF', flex: '1'}}>     
+            <div style={{ flex: '1'}}>     
                 {element2}
             </div>
         </>

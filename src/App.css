@@ -7,6 +7,7 @@ html{
 body > #root > div {
   height: 100vh; 
   overscroll-behavior: none;
+  color: var(--color-periwinkle);
 }
 .App {
   text-align: center;
