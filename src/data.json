@@ -1,12 +1,14 @@
 [
     {
         "name": "README",
-        "fileType": "text",
+        "fileName": "README",
+        "fileType": "md",
         "year": 2024,
         "content": "About Me"
     },
     {
         "name": "Resume",
+        "fileName": "Resume",
         "fileType": "pdf",
         "year": 2024,
         "content": "About Resume"
@@ -18,48 +20,56 @@
         [
             {
                 "name": "Storkdle",
+                "fileName": "Storkdle",
                 "fileType": "react",
                 "year": 2024,
                 "content": "Info about Storkdle"
             },
             {
                 "name": "GemPuzzle",
+                "fileName": "GemPuzzle",
                 "fileType": "unity",
                 "year": 2021,
                 "content": "Info about Gem Puzzle"
             },
             {
-                "name": "Decommision",
+                "name": "Decommission",
+                "fileName": "Decommission",
                 "fileType": "unity",
                 "year": 2021,
-                "content": "Info about Decommision"
+                "content": "Info about Decommission"
             },
             {
                 "name": "OfficeHell",
+                "fileName": "OfficeHell",
                 "fileType": "unity",
                 "year": 2020,
                 "content": "Info about Office Hell"
             },
             {
                 "name": "PsionicSquish",
+                "fileName": "PsionicSquish",
                 "fileType": "unity",
                 "year": 2022,
                 "content": "Info about Psionic Squish"
             },
             {
                 "name": "Labryinth",
+                "fileName": "Labryinth",
                 "fileType": "unity",
                 "year": 2023,
                 "content": "Info about Labryinth"
             },
             {
                 "name": "MountTucker",
+                "fileName": "MountTucker",
                 "fileType": "unity",
                 "year": 2020,
                 "content": "Info about Mount Tucker"
             },
             {
                 "name": "Chess",
+                "fileName": "Chess",
                 "fileType": "unity",
                 "year": 2021,
                 "content": "Info about Chess"
@@ -73,12 +83,14 @@
         [
             {
                 "name": "Haefallia",
+                "fileName": "Haefallia",
                 "fileType": "pdf",
                 "year": 2022,
                 "content": "Info about Haefallia"
             },
             {
                 "name": "Goravin",
+                "fileName": "Goravin",
                 "fileType": "pdf",
                 "year": 2019,
                 "content": "Info about Goravin"
@@ -90,23 +102,27 @@
                 [
                     {
                         "name": "NEGalinndan",
+                        "fileName": "NEGalinndan",
                         "fileType": "jpg",
                         "year": 2020,
                         "content": "Info about NEGalinndan"
                     },{
                         "name": "NWGalinndan",
+                        "fileName": "NWGalinndan",
                         "fileType": "jpg",
                         "year": 2020,
                         "content": "Info about NWGalinndan"
                     },
                     {
                         "name": "NWKuali",
+                        "fileName": "NWKuali",
                         "fileType": "jpg",
                         "year": 2020,
                         "content": "Info about NWKuali"
                     },
                     {
                         "name": "Kuali-Galinndan",
+                        "fileName": "Kuali-Galinndan",
                         "fileType": "jpg",
                         "year": 2020,
                         "content": "Info about Kuali-Galinndan"
@@ -122,31 +138,36 @@
         [
             {
                 "name": "Internships",
-                "fileType": "txt",
+                "fileName": "Internships",
+                "fileType": "md",
                 "year": 2012,
                 "content": "About Internships"
             },
             {
                 "name": "AltechAerospace",
-                "fileType": "txt",
+                "fileName": "AltechAerospace",
+                "fileType": "md",
                 "year": 2014,
                 "content": "About Altech"
             },
             {
                 "name": "DigitTop",
-                "fileType": "txt",
+                "fileName": "DigitTop",
+                "fileType": "md",
                 "year": 2018,
-                "content": "About Altech"
+                "content": "About DigitTop"
             },
             {
                 "name": "DropBearsGames",
-                "fileType": "txt",
+                "fileName": "DropBearsGames",
+                "fileType": "md",
                 "year": 2020,
                 "content": "About DropBears"
             },
             {
                 "name": "Kodable",
-                "fileType": "txt",
+                "fileName": "Kodable",
+                "fileType": "md",
                 "year": 2022,
                 "content": "About Kodable"
             }

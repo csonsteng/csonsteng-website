@@ -1,15 +1,16 @@
 import { Unity, useUnityContext } from "react-unity-webgl";
-const UnityView = () => {
-    const buildUrl = "https://csonsteng-api-a3fc6c3c7562.herokuapp.com/unity";
+const UnityView = ({selectedFile}) => {
+    const baseURL = `${process.env.REACT_APP_CDN_URL}unity/${selectedFile["fileName"]}/Build/${selectedFile["fileName"]}`;
     const { unityProvider } = useUnityContext({
-        loaderUrl: buildUrl + "/Builds.loader.js",
-        dataUrl: buildUrl + "/Builds.data.unityweb",
-        frameworkUrl: buildUrl + "/Builds.framework.js.unityweb",
-        codeUrl: buildUrl + "/Builds.wasm.unityweb",
+        loaderUrl: baseURL + ".loader.js",
+        dataUrl: baseURL + ".data.unityweb",
+        frameworkUrl: baseURL + ".framework.js.unityweb",
+        codeUrl: baseURL + ".wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         
         companyName: "Chloe Sonsteng",
-        productName: "Website"
+        productName: "Website",
+        productVersion: "1.0",
       });
     
     return (

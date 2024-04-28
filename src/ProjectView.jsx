@@ -1,10 +1,17 @@
-import React from "react";
 import UnityView from "./UnityView";
+import PDFView from "./PDFView";
+import ImageView from "./ImageView";
 const ProjectView = ({selectedFile}) => {
 
     function showContextForSelectedFile(file){
         if(file["fileType"] === "unity"){
-            return <UnityView />
+            return <UnityView key={file["name"]} selectedFile={selectedFile}/>
+        }
+        if(file["fileType"] === "pdf"){
+            return <PDFView key={file["name"]} selectedFile={selectedFile}/>
+        }
+        if(file["fileType"] === "jpg"){
+            return <ImageView key={file["name"]} selectedFile={selectedFile}/>
         }
         return <span>{file["name"]}</span>
     }
@@ -18,7 +25,7 @@ const ProjectView = ({selectedFile}) => {
         }}>
             {selectedFile ? showContextForSelectedFile(selectedFile) : null}
         </div>
-    ) //<UnityView />
+    )
 }
 
 export default ProjectView;
