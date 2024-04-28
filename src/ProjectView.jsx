@@ -1,8 +1,8 @@
-import UnityView from "./UnityView";
-import PDFView from "./PDFView";
-import ImageView from "./ImageView";
-import MarkdownView from "./MarkdownView";
-import ReactView from "./ReactView";
+import UnityView from "./FileTypeViews/UnityView";
+import PDFView from "./FileTypeViews/PDFView";
+import ImageView from "./FileTypeViews/ImageView";
+import MarkdownView from "./FileTypeViews/MarkdownView";
+import ReactView from "./FileTypeViews/ReactView";
 const ProjectView = ({selectedFile}) => {
 
     function showContextForSelectedFile(file){
