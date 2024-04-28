@@ -2,6 +2,7 @@ import UnityView from "./UnityView";
 import PDFView from "./PDFView";
 import ImageView from "./ImageView";
 import MarkdownView from "./MarkdownView";
+import ReactView from "./ReactView";
 const ProjectView = ({selectedFile}) => {
 
     function showContextForSelectedFile(file){
@@ -16,6 +17,9 @@ const ProjectView = ({selectedFile}) => {
         }
         if(file["fileType"] === "md"){
             return <MarkdownView key={file["name"]} selectedFile={selectedFile}/>
+        }
+        if(file["fileType"] === "react"){
+            return <ReactView key={file["name"]} selectedFile={selectedFile}/>
         }
         return <span>{file["name"]}</span>
     }
