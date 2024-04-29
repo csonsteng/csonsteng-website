@@ -49,7 +49,7 @@ const ProjectSelectorView = ({selectFile}) => {
                 flexDirection: 'row',
                 alignItems: 'center'
             }}>
-                <span>{[...Array(indent)].map((_) => '  ')}</span>
+                <span>{[...Array(indent+2)].map((_) => '  ')}</span>
                 <img src={`fileicons/${file["fileType"]}.png`} alt='temp' style = {{
                   height: '2em',
                   marginRight: '0.5em',
@@ -97,9 +97,9 @@ const ProjectSelectorView = ({selectFile}) => {
     
     return (
         <div style={{
-            width: '80%',
+            width: '100%',
             height: '100%',
-            marginLeft: '35px'
+            overflow: 'auto'
         }}>{unWrapData()}</div>
     )
 }

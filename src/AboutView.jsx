@@ -4,6 +4,7 @@ const AboutView = ({selectedFile}) => {
         <div style={{
             width: '100%',
             height: '100%',
+            overflow: 'auto'
         }}>{selectedFile ? selectedFile["content"] : null}</div>
     )
 }

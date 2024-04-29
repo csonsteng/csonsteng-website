@@ -29,6 +29,7 @@ const ProjectView = ({selectedFile}) => {
         <div style={{
             width: '100%',
             height: '100%',
+            overflow: 'auto'
         }}>
             {selectedFile ? showContextForSelectedFile(selectedFile) : null}
         </div>
