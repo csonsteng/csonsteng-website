@@ -44,7 +44,20 @@ const ProjectSelectorView = ({selectFile}) => {
                     setSelectedFile(file);
                     selectFile(file);
                 }
-            }}><pre>{[...Array(indent)].map((_) => '  ')}{file["name"]}.{file["fileType"]}</pre></p>
+            }}><pre style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center'
+            }}>
+                <span>{[...Array(indent)].map((_) => '  ')}</span>
+                <img src={`fileicons/${file["fileType"]}.png`} alt='temp' style = {{
+                  height: '2em',
+                  marginRight: '0.5em',
+                }}/>
+                <span style={{
+                    marginTop: '0.25em'
+                }}>{file["name"]}</span>
+                </pre></p>
         )
     }
 
