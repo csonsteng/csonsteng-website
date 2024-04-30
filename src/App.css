@@ -14,15 +14,18 @@ body > #root > div {
   width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  text-decoration: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a:link {
+  color: var(--color-soft-blue);
+  
+}
+a:visited {
+  color: var(--color-soft-purple);
+}
+a:hover{
+  text-decoration: underline;
 }
 
 .header{
@@ -49,17 +52,4 @@ body > #root > div {
 }
 .resizeHandle[direction=col]:hover{
   cursor:col-resize
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

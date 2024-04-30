@@ -27,13 +27,13 @@ const ProjectSelectorView = ({selectFile}) => {
 
     function displayFile(file, indent, index){  
         return (
-            <p 
+            <span 
             style={{
                 textAlign: 'left',
                 userSelect: 'none',
                 cursor: 'pointer'
             }}
-            
+            key={file['fileName']}
             onClick={() => {    
                 if(file["fileType"] === "dir"){  
                     setFolderStates(previous => ({
@@ -57,7 +57,7 @@ const ProjectSelectorView = ({selectFile}) => {
                 <span style={{
                     marginTop: '0.25em'
                 }}>{file["name"]}</span>
-                </pre></p>
+                </pre></span>
         )
     }
 
