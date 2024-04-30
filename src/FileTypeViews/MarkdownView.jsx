@@ -15,7 +15,7 @@ const MarkdownView = ({selectedFile}) => {
     return (
         <Markdown style={{
             width: '100%',
-            height: '100%'
+            height: '100%',
         }}
         components={{
             h1(props){
@@ -44,6 +44,8 @@ const MarkdownView = ({selectedFile}) => {
                     marginTop: '0.25em',
                     marginBottom: '0.75em',
                     fontSize: '0.9em',
+                    textAlign: 'left',
+                    marginLeft: '25px',
                     fontWeight: '1000'
                 }}>{data["children"]}</h3>
             },
@@ -59,13 +61,9 @@ const MarkdownView = ({selectedFile}) => {
             },
             h5(props){
                 const {_, ...data} = props;
-                return <h5 style={{ 
-                    height: '1em',
-                    marginTop: '0.25em',
-                    marginBottom: '0.75em',
+                return <p style={{
                     fontSize: '0.9em',
-                    fontWeight: '1000'
-                }}>{data["children"]}</h5>
+                }}>{data["children"]}</p>
             },
             h6(props){
                 const {_, ...data} = props;
@@ -78,8 +76,20 @@ const MarkdownView = ({selectedFile}) => {
             p(props){
                 const {_, ...data} = props;
                 return <p style={{
-                    fontSize: '0.9em'
+                    fontSize: '0.9em',
+                    textAlign: 'left',
+                    marginLeft: '25px',
+                    marginRight: '25px',
                 }}>{data["children"]}</p>
+            },
+            ul(props){
+                const {_, ...data} = props;
+                return <ul style={{
+                    fontSize: '0.9em',
+                    textAlign: 'left',
+                    marginLeft: '25px',
+                    marginRight: '25px',
+                }}>{data["children"]}</ul>
             },
             em(props){
                 const {_, ...data} = props;
