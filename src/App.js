@@ -11,6 +11,8 @@ function App() {
   const [selectedFile, setSelectedFile] = useState(null);
 
   function selectFile(file) {
+    window.history.replaceState(null, "Chloe Sonsteng", `${file['fileName']}`);
+    
     setSelectedFile(file);
   }
 

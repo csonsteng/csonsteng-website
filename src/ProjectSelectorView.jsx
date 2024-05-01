@@ -62,14 +62,34 @@ const ProjectSelectorView = ({selectFile}) => {
     }
 
     useEffect(() => {
+
+        function TraverseFolder(data, target){
+            for (var i = 0; i < data.length; i++){
+                let file = data[i];
+                if(file["fileName"] === target){
+                    setSelectedFile(file);
+                    selectFile(file);
+                    return true;
+                }
+                
+                if(file['fileType'] === 'dir'){
+                    if(TraverseFolder(file['content'], target)){
+                        return true;
+                    }
+                }
+            }
+                    
+            return false;
+        }
+
+
+
         if(selectedFile !== null) return;
-        for (var i = 0; i < data.length; i++){
-            let file = data[i];
-            if(file["name"] === "Readme"){
-                setSelectedFile(file);
-                selectFile(file);
-                return;
-            }         
+        var target = window.location.pathname.split('/')[1];
+        target = target === '' ? "Readme" : target;
+        if(!TraverseFolder(data, target)){
+            // todo: throw a 404 here
+            console.log(`unable to find ${target}`);
         }
     }, [data, selectedFile, selectFile]);
 
