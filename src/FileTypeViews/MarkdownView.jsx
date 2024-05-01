@@ -43,7 +43,7 @@ const MarkdownView = ({selectedFile}) => {
                     height: '1em',
                     marginTop: '0.25em',
                     marginBottom: '0.75em',
-                    fontSize: '0.9em',
+                    fontSize: '0.95em',
                     textAlign: 'left',
                     marginLeft: '25px',
                     fontWeight: '1000'
@@ -55,7 +55,9 @@ const MarkdownView = ({selectedFile}) => {
                     height: '1em',
                     marginTop: '0.25em',
                     marginBottom: '0.75em',
-                    fontSize: '0.9em',
+                    fontSize: '0.85em',
+                    textAlign: 'left',
+                    marginLeft: '25px',
                     fontWeight: '1000'
                 }}>{data["children"]}</h4>
             },
@@ -91,21 +93,38 @@ const MarkdownView = ({selectedFile}) => {
                     marginRight: '25px',
                 }}>{data["children"]}</ul>
             },
-            em(props){
-                const {_, ...data} = props;
-                return <em style={{
-                    height: '1em',
-                    fontSize: '0.75em'
-                }}>({data["children"]})</em>
-            },
             img(props){
                 const {_, ...data} = props;
+                const altData = data['alt'];
+
+                if(altData.includes("Emote")){
+                    return <img 
+                    src={data['src']}
+                    alt={altData}
+                    style={{
+                        height: '2em'        
+                    }}/>
+                }
+                const altSplit = altData.split('?');
+                let params = {};
+                if(altSplit[1]){
+                    const paramList = altSplit[1].split(',');
+                    paramList.forEach((fullParam) => {
+                        let splitParam = fullParam.split('=');
+                        params[splitParam[0]] = splitParam[1];
+                        console.log(`${splitParam[0]}:${splitParam[1]}`);
+                    });
+                }
                 return <img 
                     src={data['src']}
-                    alt={data['alt']}
+                    alt={altSplit[0]}
                     style={{
-                        height: '2em',
-                        marginTBottom: '2em'
+                        height: 'auto',
+                        maxHeight: params.hasOwnProperty('size') ? `${params['size']}px`  : '300px',
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        display: 'block',
+                        borderRadius: params.hasOwnProperty('radius') ? `${params['radius']}em`  : '5em',
                 }}/>
             }
         }}>{currentMarkdown}</Markdown>
