@@ -28,25 +28,6 @@ a:hover{
   text-decoration: underline;
 }
 
-.header{
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: stretch;
-  border-bottom: solid 3px var(--color-grey-purple);
-}
-
-.nameHeader {
-  display: flex;
-  font-size: 1.3em;
-  color: var(--color-soft-purple);
-  flex-direction: column-reverse;
-  align-content: baseline;
-  margin-left: 5px;
-}
-
 .resizeHandle[direction=row]:hover{
   cursor:row-resize
 }
