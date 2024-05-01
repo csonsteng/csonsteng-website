@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 
-const ResizeableBox = ({horizontal, element1, element2, element1MinSize, element2MinSize}) => {
+const ResizeableBox = ({horizontal, defaultSize, element1, element2, element1MinSize, element2MinSize}) => {
 
     const refContainer = useRef();
     const [isDragging, setIsDragging] = useState(false);
@@ -31,8 +31,9 @@ const ResizeableBox = ({horizontal, element1, element2, element1MinSize, element
                 height: boundingRect.height
 
             });
+            setHandlePosition(defaultSize);
         }   
-    }, []);
+    }, [defaultSize]);
 
     useEffect(() => {  
 

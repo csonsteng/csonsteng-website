@@ -22,10 +22,10 @@ function App() {
       flexDirection: 'column',
     }}>
       <WebHeader />
-      <ResizeableBox horizontal={true} element1MinSize={0.1} element2MinSize={0.5}
+      <ResizeableBox horizontal={true} defaultSize='30%' element1MinSize={0.1} element2MinSize={0.5}
       element1={<ProjectSelectorView selectFile={selectFile}/>}
       element2={
-        <ResizeableBox horizontal={false} element1MinSize={0.3} element2MinSize={0.1}
+        <ResizeableBox horizontal={false} defaultSize='75%' element1MinSize={0.3} element2MinSize={0.1}
         element1={<ProjectView  selectedFile={selectedFile}/>}
         element2={<AboutView selectedFile={selectedFile}/>}
         />
