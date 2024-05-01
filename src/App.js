@@ -21,15 +21,19 @@ function App() {
       display: 'flex',
       flexDirection: 'column',
     }}>
+       <div style={{ height: '33px'}}>
       <WebHeader />
-      <ResizeableBox horizontal={true} defaultSize='30%' element1MinSize={0.1} element2MinSize={0.5}
-      element1={<ProjectSelectorView selectFile={selectFile}/>}
-      element2={
-        <ResizeableBox horizontal={false} defaultSize='75%' element1MinSize={0.3} element2MinSize={0.1}
-        element1={<ProjectView  selectedFile={selectedFile}/>}
-        element2={<AboutView selectedFile={selectedFile}/>}
-        />
-      }/>
+      </div>
+      <div style={{ height: 'calc(100% - 33px)'}}>
+        <ResizeableBox horizontal={true} defaultSize='30%' element1MinSize={0.1} element2MinSize={0.5}
+        element1={<ProjectSelectorView selectFile={selectFile}/>}
+        element2={
+          <ResizeableBox horizontal={false} defaultSize='75%' element1MinSize={0.3} element2MinSize={0.1}
+          element1={<ProjectView  selectedFile={selectedFile}/>}
+          element2={<AboutView selectedFile={selectedFile}/>}
+          />
+        }/>
+      </div>
     </div>
   );
 }
