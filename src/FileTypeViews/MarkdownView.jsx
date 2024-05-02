@@ -1,21 +1,30 @@
 import { useState, useEffect } from "react";
 import Markdown from 'react-markdown';
+import LoadingView from "../LoadingView";
 
 const MarkdownView = ({selectedFile}) => {
 
     const [currentMarkdown, setCurrentMarkdown] = useState('');
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(()=>{
         fetch(`${process.env.REACT_APP_CDN_URL}md/${selectedFile["fileName"]}.md`)
         .then(response => response.text())
         .then(response => {
             setCurrentMarkdown(response);
+            setIsLoaded(true);
         });
     }, [selectedFile]);
     return (
+        
+        <div style={{
+            width: '100%',
+            height: '100%',
+        }}>
         <Markdown style={{
             width: '100%',
             height: '100%',
+            display: isLoaded ? 'inline' : 'none'
         }}
         components={{
             h1(props){
@@ -127,7 +136,14 @@ const MarkdownView = ({selectedFile}) => {
                         borderRadius: params.hasOwnProperty('radius') ? `${params['radius']}em`  : '5em',
                 }}/>
             }
-        }}>{currentMarkdown}</Markdown>
+        }}>
+            {currentMarkdown}
+            </Markdown>
+            
+            {!isLoaded && (
+                <LoadingView />
+            )}
+        </div>
     )
 }
 

@@ -66,7 +66,7 @@ const ProjectSelectorView = ({selectFile}) => {
         function TraverseFolder(data, target){
             for (var i = 0; i < data.length; i++){
                 let file = data[i];
-                if(file["fileName"] === target){
+                if(file["name"] === target){
                     setSelectedFile(file);
                     selectFile(file);
                     return true;
