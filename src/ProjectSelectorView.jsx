@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import dataFile from "./data.json";
+import FramedView from "./FramedView";
 
 const ProjectSelectorView = ({selectFile}) => {
 
@@ -120,7 +121,16 @@ const ProjectSelectorView = ({selectFile}) => {
             width: '100%',
             height: '100%',
             overflow: 'auto'
-        }}>{unWrapData()}</div>
+        }}>
+            
+            <FramedView 
+                title = 'Projects'
+                onHide={() => {
+                    console.log('hide');
+                }}
+                content={unWrapData()}
+                />
+                </div>
     )
 }
 

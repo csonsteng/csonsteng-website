@@ -3,6 +3,7 @@ import PDFView from "./FileTypeViews/PDFView";
 import ImageView from "./FileTypeViews/ImageView";
 import MarkdownView from "./FileTypeViews/MarkdownView";
 import ReactView from "./FileTypeViews/ReactView";
+import FramedView from "./FramedView";
 const ProjectView = ({selectedFile}) => {
 
     function showContextForSelectedFile(file){
@@ -26,14 +27,30 @@ const ProjectView = ({selectedFile}) => {
 
 
     return (
-        <div style={{
-            width: '100%',
-            height: '100%',
-            overflow: 'auto',
-            backgroundColor: 'var(--color-dark-grey-purple)'
-        }}>
-            {selectedFile ? showContextForSelectedFile(selectedFile) : null}
-        </div>
+        <>
+            {selectedFile && (<FramedView 
+                title = {selectedFile['name']}
+                onMaximize={() => {
+                    console.log('maximize');
+                }}
+                onHide={() => {
+                    console.log('hide');
+                }}
+                onNewWindow={() => {
+                    console.log('new window');
+                }}
+                content = {
+                    <div style={{
+                        width: '100%',
+                        height: '100%',
+                        overflow: 'auto',
+                        backgroundColor: 'var(--color-dark-grey-purple)'
+                    }}>
+                        {showContextForSelectedFile(selectedFile)}
+                    </div>
+                } 
+            /> )}
+        </>
     )
 }
 

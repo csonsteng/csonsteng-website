@@ -1,11 +1,21 @@
 import React from "react";
+import FramedView from "./FramedView";
 const AboutView = ({selectedFile}) => {
     return (
+
         <div style={{
             width: '100%',
             height: '100%',
             overflow: 'auto'
-        }}>{selectedFile ? selectedFile["content"] : null}</div>
+        }}>
+            {selectedFile && (<FramedView 
+                title = {selectedFile['name']}
+                onHide={() => {
+                    console.log('hide');
+                }}
+                content = {selectedFile ? selectedFile["content"] : null}
+                />)}
+            </div>
     )
 }
 
