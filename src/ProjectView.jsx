@@ -48,7 +48,6 @@ const ProjectView = ({selectedFile}) => {
         setFullScreen(false);
     }, [fullScreen])
 
-
     return (
         <div style={{
             width: '100%',
