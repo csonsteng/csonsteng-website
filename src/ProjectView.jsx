@@ -4,11 +4,14 @@ import ImageView from "./FileTypeViews/ImageView";
 import MarkdownView from "./FileTypeViews/MarkdownView";
 import ReactView from "./FileTypeViews/ReactView";
 import FramedView from "./FramedView";
+import { useEffect, useState } from "react";
 const ProjectView = ({selectedFile}) => {
+
+    const [fullScreen, setFullScreen] = useState(false); 
 
     function showContextForSelectedFile(file){
         if(file["fileType"] === "unity"){
-            return <UnityView key={file["name"]} selectedFile={selectedFile}/>
+            return <UnityView key={file["name"]} selectedFile={selectedFile} fullScreen={fullScreen}/>
         }
         if(file["fileType"] === "pdf"){
             return <PDFView key={file["name"]} selectedFile={selectedFile}/>
@@ -38,8 +41,12 @@ const ProjectView = ({selectedFile}) => {
     }
 
     function onMaximize(){
-
+        setFullScreen(true);
     }
+
+    useEffect(() => {
+        setFullScreen(false);
+    }, [fullScreen])
 
 
     return (
@@ -50,9 +57,7 @@ const ProjectView = ({selectedFile}) => {
         }}>
             {selectedFile && (<FramedView 
                 title = {selectedFile['name']}
-                onMaximize={selectedFile['fileType'] === 'unity' ? () => {
-                    console.log('maximize');
-                } : null}
+                onFullScreen={selectedFile['fileType'] === 'unity' ? onMaximize : null}
                 onNewWindow={selectedFile['fileType'] !== 'md' && selectedFile['fileType'] !== 'unity' ? onNewWindow : null}
                 content = {
                     <div style={{
