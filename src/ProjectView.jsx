@@ -25,6 +25,22 @@ const ProjectView = ({selectedFile}) => {
         return <span>{file["name"]}</span>
     }
 
+    function onNewWindow(){
+        var target = selectedFile['fileName'];
+        if(selectedFile["fileType"] === "pdf"){
+            target = `${process.env.REACT_APP_CDN_URL}pdf/${selectedFile["fileName"]}.pdf`;
+        }
+        if(selectedFile["fileType"] === "jpg"){
+            target = `${process.env.REACT_APP_CDN_URL}img/${selectedFile["fileName"]}.${selectedFile["fileType"]}`;
+        }
+        
+        window.open(target, '_blank');
+    }
+
+    function onMaximize(){
+
+    }
+
 
     return (
         <div style={{
@@ -34,12 +50,10 @@ const ProjectView = ({selectedFile}) => {
         }}>
             {selectedFile && (<FramedView 
                 title = {selectedFile['name']}
-                onMaximize={selectedFile['fileType'] != 'md' ? () => {
+                onMaximize={selectedFile['fileType'] === 'unity' ? () => {
                     console.log('maximize');
                 } : null}
-                onNewWindow={selectedFile['fileType'] != 'md' ? () => {
-                    console.log('new window');
-                } : null}
+                onNewWindow={selectedFile['fileType'] !== 'md' && selectedFile['fileType'] !== 'unity' ? onNewWindow : null}
                 content = {
                     <div style={{
                         width: '100%',

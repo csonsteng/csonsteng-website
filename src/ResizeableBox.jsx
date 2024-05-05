@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 
-const ResizeableBox = ({horizontal, defaultSize, element1, element2, element1MinSize, element2MinSize}) => {
+const ResizeableBox = ({horizontal, defaultSize, element1, element2, element1MinSize, element2MinSize, minimized}) => {
 
     const refContainer = useRef();
     const [isDragging, setIsDragging] = useState(false);
@@ -61,6 +61,9 @@ const ResizeableBox = ({horizontal, defaultSize, element1, element2, element1Min
         function onMouseOrTouchUp(){
             setIsDragging(false);
         }
+        if(minimized){
+            return;
+        }
 
         // todo: only subscribe to events depending on platform
         window.addEventListener('mousemove', onMouseMove);
@@ -73,7 +76,7 @@ const ResizeableBox = ({horizontal, defaultSize, element1, element2, element1Min
             window.removeEventListener('mouseup', onMouseOrTouchUp);
             window.removeEventListener('touchend', onMouseOrTouchUp);
         };
-    }, [isDragging, offset, size, element1MinSize, element2MinSize, horizontal]);
+    }, [isDragging, offset, size, element1MinSize, element2MinSize, horizontal, minimized]);
 
     return (
         <div className='resize'
@@ -87,10 +90,10 @@ const ResizeableBox = ({horizontal, defaultSize, element1, element2, element1Min
 
             { horizontal ? (
             <>
-                <div style={{width: handlePosition}}>
+                <div style={{width: minimized ? minimized : handlePosition}}>
                     {element1}
                 </div>
-                <div className='resizeHandle' direction='col'
+                <div className={minimized ? 'inActiveHandle': 'resizeHandle'} direction='col'
                     onMouseDown={onMouseOrTouchDown}
                     onTouchStart={onMouseOrTouchDown}
                     style={{ 
@@ -113,10 +116,10 @@ const ResizeableBox = ({horizontal, defaultSize, element1, element2, element1Min
             </>
         ) : 
         <>
-            <div style={{height: handlePosition}}>
+            <div style={{height: minimized ? minimized : handlePosition}}>
                 {element1}
             </div>
-            <div className='resizeHandle' direction='row'
+            <div className={minimized ? 'inActiveHandle': 'resizeHandle'} direction='row'
                 onMouseDown={onMouseOrTouchDown}
                 onTouchStart={onMouseOrTouchDown}
                 style={{

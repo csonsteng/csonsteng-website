@@ -16,7 +16,8 @@ const WebHeader = () => {
                   color: 'var(--color-soft-purple)',
                   flexDirection: 'column-reverse',
                   alignContent: 'baseline',
-                  marginLeft: '5px'
+                  marginLeft: '5px',        
+                  userSelect: 'none'
             }}>Chloe Sonsteng</span>
             <div style={{
                 height: '90%',
@@ -24,7 +25,8 @@ const WebHeader = () => {
                 flexDirection: 'row-reverse',
                 alignContent: 'center',
                 alignSelf: 'center',
-                marginRight: '5px'
+                marginRight: '5px',        
+                userSelect: 'none'
             }}>
                 <a  href='https://www.linkedin.com/in/chloe-sonsteng-05477196/' target='_blank' rel="noreferrer" style={{ width: '27px'}}>
                     <img src='/icons/linkedin.png' alt='linkedin icon' style={{ height: '100%'}}/>

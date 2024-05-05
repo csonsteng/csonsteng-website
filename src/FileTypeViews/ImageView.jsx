@@ -14,7 +14,8 @@ const ImageView = ({selectedFile}) => {
             maxHeight: '100%',
             width: 'auto',
             height: 'auto',
-            display: isLoaded ? 'inline' : 'none'
+            display: isLoaded ? 'inline' : 'none',        
+            userSelect: 'none'
             }}
             alt={selectedFile["alt"]}
             src={`${process.env.REACT_APP_CDN_URL}img/${selectedFile["fileName"]}.${selectedFile["fileType"]}`}

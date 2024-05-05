@@ -1,10 +1,20 @@
-const FramedView = ({ content , title, onMaximize, onHide, onNewWindow}) => {
+import { useState } from 'react';
+const FramedView = ({ content , title, onFullScreen, onMinimize, onRestore, onNewWindow, verticalMinimize}) => {
+    const [minimized, setMinimized] = useState(false);
 
+    function Minimize(){
+        setMinimized(true);
+        onMinimize();
+    }
+    function Restore(){
+        setMinimized(false);
+        onRestore();
+    }
 
     return (
         <div style = {{
             height: '100%',
-            width: '100%'
+            width: '100%',
         }}>
             <div style = {{
                 height: '30px',
@@ -23,7 +33,7 @@ const FramedView = ({ content , title, onMaximize, onHide, onNewWindow}) => {
                     userSelect: 'none'
                     
                 }}>
-                    {title}
+                    {minimized && verticalMinimize ? '' : title}
                 </span>
                 <span style={{
                     height: '100%',
@@ -34,27 +44,28 @@ const FramedView = ({ content , title, onMaximize, onHide, onNewWindow}) => {
                     <span style={{
                         float: 'right',
                         height: '100%',
-                        marginTop: '-28px'
+                        marginTop: '-28px',        
+                        userSelect: 'none'
 
                     }}>
-                        {onHide && (
+                        {onMinimize && onRestore && (
                             <img 
                             className='frameButton'
-                            src='/icons/minimize.png' 
-                            alt='Hide Icon' 
-                            onClick={onHide}
+                            src={minimized ? '/icons/plus.png' : '/icons/minimize.png'}
+                            alt={minimized ? 'Restore Icon' : 'Hide icon'}
+                            onClick={minimized ? Restore : Minimize}
                             style={{
                                 height: 'calc(100% - 5px)',
                                 marginRight: '5px'
                             }}
                             />
                         )}
-                        {onMaximize && (
+                        {onFullScreen && (
                             <img 
                             className='frameButton'
-                            src='/icons/maximize.png' 
+                            src='/icons/fullScreen.png' 
                             alt='Full Screen Icon' 
-                            onClick={onMaximize}
+                            onClick={onFullScreen}
                             style={{
                                 height: 'calc(100% - 5px)',
                                 marginRight: '5px'
@@ -75,22 +86,40 @@ const FramedView = ({ content , title, onMaximize, onHide, onNewWindow}) => {
                     </span>
                 </span>
             </div>
-            
-            <div style={{
-                height: '1px',
-                width: '80%',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                backgroundColor: 'var(--color-grey-purple'
-                }}/>
-            <div style = {{
-                height: 'calc(100% - 31px)',
-                width: '100%',
-                marginTop: '0px',
-                paddingTop: '0px',
-            }}>
-                {content}
-            </div>
+                <div style={{
+                    height: '1px',
+                    width: '80%',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    backgroundColor: 'var(--color-grey-purple'
+                    }}
+                />
+                {minimized && verticalMinimize && (
+                    <span style={{
+                        display: 'inline-block',
+                        float: 'right',
+                        width: '50%',
+                        marginTop: '10px',
+                        marginLeft: '25%',
+                        marginRight: '25%',
+                        userSelect: 'none',
+                        textOrientation: 'mixed',
+                        writingMode: 'vertical-lr'
+                        
+                    }}>
+                        { title }
+                    </span>
+                )}
+                { !minimized && (
+                    <div style = {{
+                        height: 'calc(100% - 31px)',
+                        width: '100%',
+                        marginTop: '0px',
+                        paddingTop: '0px',
+                    }}>
+                        {content}
+                    </div>
+                )}
         </div>
     )
 
