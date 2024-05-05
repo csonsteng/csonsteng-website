@@ -27,18 +27,19 @@ const ProjectView = ({selectedFile}) => {
 
 
     return (
-        <>
+        <div style={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'var(--color-dark-grey-purple)'
+        }}>
             {selectedFile && (<FramedView 
                 title = {selectedFile['name']}
-                onMaximize={() => {
+                onMaximize={selectedFile['fileType'] != 'md' ? () => {
                     console.log('maximize');
-                }}
-                onHide={() => {
-                    console.log('hide');
-                }}
-                onNewWindow={() => {
+                } : null}
+                onNewWindow={selectedFile['fileType'] != 'md' ? () => {
                     console.log('new window');
-                }}
+                } : null}
                 content = {
                     <div style={{
                         width: '100%',
@@ -50,7 +51,7 @@ const ProjectView = ({selectedFile}) => {
                     </div>
                 } 
             /> )}
-        </>
+        </div>
     )
 }
 

@@ -128,7 +128,14 @@ const ProjectSelectorView = ({selectFile}) => {
                 onHide={() => {
                     console.log('hide');
                 }}
-                content={unWrapData()}
+                content={      
+                <div style={{
+                    width: '100%',
+                    height: '100%',
+                    overflow: 'auto'
+                }}>{unWrapData()}
+                </div>
+                }
                 />
                 </div>
     )
