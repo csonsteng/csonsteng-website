@@ -20,6 +20,7 @@ const FramedView = ({ content , title, onMaximize, onHide, onNewWindow}) => {
                     width: '50%',
                     marginLeft: '25%',
                     marginRight: '25%',
+                    userSelect: 'none'
                     
                 }}>
                     {title}

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import dataFile from "./data.json";
 import FramedView from "./FramedView";
 
-const ProjectSelectorView = ({selectFile}) => {
+const ProjectSelectorView = ({selectFile, onMinimize}) => {
 
     const [data] = useState(dataFile);
     const [folderStates, setFolderStates] = useState({});
@@ -126,7 +126,7 @@ const ProjectSelectorView = ({selectFile}) => {
             <FramedView 
                 title = 'Projects'
                 onHide={() => {
-                    console.log('hide');
+                    onMinimize()
                 }}
                 content={      
                 <div style={{
