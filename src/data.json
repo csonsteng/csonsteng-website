@@ -4,14 +4,14 @@
         "fileName": "Readme",
         "fileType": "md",
         "year": 2024,
-        "content": "About Me"
+        "content": "A brief intro about me and my website!\n\nThis place is still a work in progress, but it is miles better than my [old one](www.chloesonsteng.com)."
     },
     {
         "name": "Resume",
         "fileName": "Resume",
         "fileType": "pdf",
         "year": 2024,
-        "content": "About Resume"
+        "content": "This is my resume! You can find more details about any specific position under the history tab."
     },
     {
         "name": "Games",
@@ -23,56 +23,56 @@
                 "fileName": "https://www.storkdle.com/",
                 "fileType": "react",
                 "year": 2024,
-                "content": "Info about Storkdle"
+                "content": "Storkdle is a Wordle clone that gives clues based on number and type of stroke in each letter. It was my first real React project. "
             },
             {
-                "name": "GemPuzzle",
+                "name": "Gem Puzzle",
                 "fileName": "GemPuzzle",
                 "fileType": "unity",
                 "year": 2021,
-                "content": "Info about Gem Puzzle"
+                "content": "A weird little math puzzle built entirely in Unity UI components for whatever reason. It was an afternoon project one day while I was bored back in 2021."
             },
             {
                 "name": "Decommission",
                 "fileName": "Decommission",
                 "fileType": "unity",
                 "year": 2021,
-                "content": "Info about Decommission"
+                "content": "Decommission was made for the ScoreSpace #13 Game Jam in May of 2021. It had the required theme of \"Dodging\" with an optional challenge of \"One Room\". The length of the jam was 72 hours. The game was inspired by the old flash game (Seconds of Madness)[https://www.addictinggames.com/sports/seconds-of-madness]\n\nPlease excuse the abrasive music, I may have overdone the industrial vibe."
             },
             {
-                "name": "OfficeHell",
+                "name": "Punch Card Hell",
                 "fileName": "OfficeHell",
                 "fileType": "unity",
                 "year": 2020,
-                "content": "Info about Office Hell"
+                "content": "Punch Card Hell was my first ever game jam from December of 2020. It was for the Mini Game Jam #69. The theme was \"Hell\" and cards were a required mechanic. The length of the jam was 72 hours. It is made to be the GroundHog Day work week of Hell. I did probably overdo it on challenge factor as I didn't have a whole lot of time left to balance. I also wish I had went for a different control scheme as the tank controls are infuriating."
             },
             {
-                "name": "PsionicSquish",
+                "name": "Psionic Squish",
                 "fileName": "PsionicSquish",
                 "fileType": "unity",
                 "year": 2022,
-                "content": "Info about Psionic Squish"
+                "content": "Psionic Squish is very much a work in progress game, even though I haven't touched it significantly in a few years. Tactical turn based games are one of my favorite genres, especially if they are procedurally generated. This is inspired heavily by (Invisible Inc.)[https://www.klei.com/games/invisible-inc] with a fantasy twist. I have a lot of the overall design and narrative work done, and just need to get back to implementing. \n\nMy biggest challenge is trying to figure out how to keep the levels feeling engaging while still spacious and unique. The current level starts out meh."
             },
             {
-                "name": "Labryinth",
+                "name": "Labyrinth",
                 "fileName": "Labryinth",
                 "fileType": "unity",
                 "year": 2023,
-                "content": "Info about Labryinth"
+                "content": "This is my most recent project. I wanted to play around with procedurally generated geometry and am a fan of both mazes and horror. I really want this game to feel like something could always be around the corner. I want tension without real danger. I have not yet figured out how to accomplish that with the enemy yet. It also definitely needs a better enemy model, and a better way to track your way through the maze. "
             },
             {
-                "name": "MountTucker",
+                "name": "Mount Tucker",
                 "fileName": "MountTucker",
                 "fileType": "unity",
                 "year": 2020,
-                "content": "Info about Mount Tucker"
+                "content": "I only uploaded this game as a kick to make myself get back to working on it. It is my oldest game and I was working on it in 2020 before working at DropBears. I haven't picked it back up since I got that job. I have a whole notebook of design to collate and implement. It is inspired by both Twin Peaks and Stardew Valley."
             },
             {
                 "name": "Chess",
                 "fileName": "Chess",
                 "fileType": "unity",
                 "year": 2021,
-                "content": "Info about Chess"
+                "content": "I got bored one weekend in 2021 and decided to make a chess engine. The pieces were from the Unity store. It currently does not handle pawn promotion or en passant. Also the AI could use some openings and some overall improvement."
             }
         ]
     },

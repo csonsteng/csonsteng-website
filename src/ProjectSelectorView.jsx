@@ -67,7 +67,7 @@ const ProjectSelectorView = ({selectFile, onMinimize, onRestore}) => {
         function TraverseFolder(data, target){
             for (var i = 0; i < data.length; i++){
                 let file = data[i];
-                if(file["name"] === target){
+                if(file["name"].replace(/ /g,"_") === target){
                     setSelectedFile(file);
                     selectFile(file);
                     return true;

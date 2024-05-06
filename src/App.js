@@ -13,7 +13,7 @@ function App() {
   const [aboutViewMinimized, setAboutViewMinimized] = useState(null);
 
   function selectFile(file) {
-    window.history.replaceState(null, "Chloe Sonsteng", `${file['name']}`);
+    window.history.replaceState(null, "Chloe Sonsteng", `${file['name']}`.replace(/ /g,"_"));
     
     setSelectedFile(file);
   }
