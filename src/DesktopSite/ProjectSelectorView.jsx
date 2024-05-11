@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import dataFile from "../data.json";
 import FramedView from "../ViewUtilities/FramedView";
 
-const ProjectSelectorView = ({selectFile, onMinimize, onRestore}) => {
+const ProjectSelectorView = ({selectFile, onMinimize, onRestore, onNoFileFound}) => {
 
     const [data] = useState(dataFile);
     const [folderStates, setFolderStates] = useState({});
@@ -89,10 +89,9 @@ const ProjectSelectorView = ({selectFile, onMinimize, onRestore}) => {
         var target = window.location.pathname.split('/')[1];
         target = target === '' ? "Readme" : target;
         if(!TraverseFolder(data, target)){
-            // todo: throw a 404 here
-            console.log(`unable to find ${target}`);
+            onNoFileFound(target);
         }
-    }, [data, selectedFile, selectFile]);
+    }, [data, selectedFile, selectFile, onNoFileFound]);
 
     useEffect(() => {
 

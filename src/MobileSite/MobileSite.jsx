@@ -11,16 +11,16 @@ const MobileSite = ({ onForceDesktop }) => {
                 I am a senior software developer with a focus on C# in Unity. I am always down for new challenges and am constantly pushing myself to grow.
             </p>
             <img 
-                        src='images/chloePicture.jpg'
-                        alt='Selfie'
-                        style={{
-                            height: 'auto',
-                            maxHeight:'300px',
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                            display: 'block',
-                            borderRadius: '5em',
-                    }}/>
+                src='images/chloePicture.jpg'
+                alt='Selfie'
+                style={{
+                    height: 'auto',
+                    maxHeight:'300px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    display: 'block',
+                    borderRadius: '5em',
+            }}/>
             <p>
                     Unfortunately it appears you are on mobile, and my site is intended for desktop viewing. :(
             </p>
