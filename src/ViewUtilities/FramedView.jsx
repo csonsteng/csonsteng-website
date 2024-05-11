@@ -37,7 +37,6 @@ const FramedView = ({ content , title, onFullScreen, onMinimize, onRestore, onNe
                 </span>
                 <span style={{
                     height: '100%',
-                    display: 'inline-block',
                     display: 'flex',
                     flexDirection: 'row-reverse',
                 }}>
