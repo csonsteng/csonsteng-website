@@ -29,7 +29,7 @@ function App() {
             <BrowserView style={{ height: '100%', width: '100%'}}>
               <DesktopSite />
             </BrowserView>
-            <MobileView style={{ height: 'calc(100% - 33px)', width: '100%'}}>
+            <MobileView style={{ height: '100%', width: '100%'}}>
               <MobileSite onForceDesktop={onForceDesktop} />
             </MobileView>
         </>
