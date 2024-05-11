@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LoadingView from '../LoadingView';
+import LoadingView from '../ViewUtilities/LoadingView';
 const ReactView = ({selectedFile}) => {
     const [isLoaded, setIsLoaded] = useState(false);
     return ( 

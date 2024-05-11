@@ -1,5 +1,5 @@
 import React from "react";
-import FramedView from "./FramedView";
+import FramedView from "../ViewUtilities/FramedView";
 import Markdown from 'react-markdown';
 const AboutView = ({selectedFile, onMinimize, onRestore}) => {
     return (

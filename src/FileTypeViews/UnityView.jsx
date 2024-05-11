@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
-import LoadingView from "../LoadingView";
+import LoadingView from "../ViewUtilities/LoadingView";
 const UnityView = ({selectedFile, fullScreen}) => {
 
     const baseURL = `${process.env.REACT_APP_CDN_URL}unity/${selectedFile["fileName"]}/Build/${selectedFile["fileName"]}`;

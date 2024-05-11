@@ -1,9 +1,9 @@
-import UnityView from "./FileTypeViews/UnityView";
-import PDFView from "./FileTypeViews/PDFView";
-import ImageView from "./FileTypeViews/ImageView";
-import MarkdownView from "./FileTypeViews/MarkdownView";
-import ReactView from "./FileTypeViews/ReactView";
-import FramedView from "./FramedView";
+import UnityView from "../FileTypeViews/UnityView";
+import PDFView from "../FileTypeViews/PDFView";
+import ImageView from "../FileTypeViews/ImageView";
+import MarkdownView from "../FileTypeViews/MarkdownView";
+import ReactView from "../FileTypeViews/ReactView";
+import FramedView from "../ViewUtilities/FramedView";
 import { useEffect, useState } from "react";
 const ProjectView = ({selectedFile}) => {
 

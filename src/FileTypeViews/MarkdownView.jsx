@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Markdown from 'react-markdown';
-import LoadingView from "../LoadingView";
+import LoadingView from "../ViewUtilities/LoadingView";
 
 const MarkdownView = ({selectedFile}) => {
 

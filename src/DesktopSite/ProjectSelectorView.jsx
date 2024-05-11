@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import dataFile from "./data.json";
-import FramedView from "./FramedView";
+import dataFile from "../data.json";
+import FramedView from "../ViewUtilities/FramedView";
 
 const ProjectSelectorView = ({selectFile, onMinimize, onRestore}) => {
 
