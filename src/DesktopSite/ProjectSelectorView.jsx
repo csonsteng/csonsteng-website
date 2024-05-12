@@ -62,58 +62,46 @@ const ProjectSelectorView = ({selectFile, onMinimize, onRestore, onNoFileFound})
         )
     }
 
+// Loads correct initial file based on URL, and sets minimum open folders to reveal it in proj sel view
     useEffect(() => {
+        let initialFolderStates = {};
 
-        function TraverseFolder(data, target){
+        function TraverseFolder(data, target, parentIndex){
+            var foundFile = false;
             for (var i = 0; i < data.length; i++){
                 let file = data[i];
                 if(file["name"].replace(/ /g,"_") === target){
                     setSelectedFile(file);
                     selectFile(file);
-                    return true;
+                    foundFile = true;
+                    continue;
                 }
                 
                 if(file['fileType'] === 'dir'){
-                    if(TraverseFolder(file['content'], target)){
-                        return true;
+                    let index = parentIndex === 0 ? `${i}` : `${parentIndex}.${i}`;
+                    if(TraverseFolder(file['content'], target, i)){
+                        initialFolderStates[index] = true;
+                        foundFile = true;
+                        continue;
                     }
+                    initialFolderStates[index] = false;
                 }
             }
                     
-            return false;
+            return foundFile;
         }
-
-
 
         if(selectedFile !== null) return;
+
         var target = window.location.pathname.split('/')[1];
         target = target === '' ? "Readme" : target;
-        if(!TraverseFolder(data, target)){
+
+        if(!TraverseFolder(data, target, 0)){
             onNoFileFound(target);
         }
-    }, [data, selectedFile, selectFile, onNoFileFound]);
-
-    useEffect(() => {
-
-        let initialFolderStates = {};
-
-        function setInitialFolderState(file, parentIndex, subIndex){
-            let index = parentIndex === 0 ? `${subIndex}` : `${parentIndex}.${subIndex}`;
-            initialFolderStates[index] = false;
-            for (var i = 0; i < file["content"].length; i++){
-                let subFile = file["content"][i];
-                if(subFile["fileType"] !== "dir") continue;
-                setInitialFolderState(subFile, index, i);          
-            }
-        }
-
-        for (var i = 0; i < data.length; i++){
-            let file = data[i];
-            if(file["fileType"] !== "dir") continue;
-            setInitialFolderState(file, 0, i);          
-        }
+        
         setFolderStates(initialFolderStates);
-    }, [data]);
+    }, [data, selectedFile, selectFile, onNoFileFound]);
     
     return (
         <div style={{
