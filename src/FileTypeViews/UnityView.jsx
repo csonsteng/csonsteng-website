@@ -24,14 +24,19 @@ const UnityView = ({selectedFile, fullScreen}) => {
         }
     }, [fullScreen, requestFullscreen])
 
+    useEffect(() => {
+        if(isLoaded){
+            window.dispatchEvent(new CustomEvent('unityLoaded'));
+        }
+    }, [isLoaded])
+
     useEffect( () => {
         return async () => {
             if(isLoaded){
                 await unload();
             }
         }
-    }
-    );
+    }, [isLoaded, unload]);
     return (
         
     <div id="unity-container" className="unity-desktop" style={{

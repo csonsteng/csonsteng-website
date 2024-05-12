@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import ResizeableBox from '../ViewUtilities/ResizeableBox';
 import ProjectSelectorView from './ProjectSelectorView';
 import ProjectView from './ProjectView';
@@ -11,9 +11,23 @@ const DesktopSite = () => {
   const [noFileFound, setNoFileFound] = useState('');
   const [selectorViewMinimized, setSelectorViewMinimized] = useState(null);
   const [aboutViewMinimized, setAboutViewMinimized] = useState(null);
+  const [unityLoaded, setUnityLoaded] = useState(false);
 
   function selectFile(file) {
     window.history.replaceState(null, "Chloe Sonsteng", `${file['name']}`.replace(/ /g,"_"));
+
+    if(selectedFile && selectedFile['fileType'] === 'unity'){
+      // react-unity-webgl doesn't always clean up properly when navigating away.
+      // https://github.com/jeffreylanters/react-unity-webgl/issues/250
+      //https://github.com/jeffreylanters/react-unity-webgl/issues/22
+      // failsafe browser refresh
+      window.location.reload();  
+      return;    
+    }
+
+    if(file['fileType'] === 'unity'){
+      setUnityLoaded(false);
+    }
     
     setSelectedFile(file);
     setNoFileFound('');
@@ -38,6 +52,15 @@ const DesktopSite = () => {
   function restoreAboutView(){
     setAboutViewMinimized(false);
   }
+  const onUnityLoaded = () => {
+    setUnityLoaded(true);
+  }
+  useEffect(() => {
+    window.addEventListener('unityLoaded', onUnityLoaded);
+    return () => {
+      window.removeEventListener('unityLoaded',onUnityLoaded);
+    }
+  },[])
   return (
     <ResizeableBox horizontal={true} defaultSize='27%' element1MinSize={0.1} element2MinSize={0.5} minimized={selectorViewMinimized}
         element1={<ProjectSelectorView selectFile={selectFile} onMinimize={minimizeSelectorView} onRestore={restoreSelectorView} onNoFileFound={onNoFileFound}/>}
