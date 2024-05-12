@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import ResizeableBox from '../ViewUtilities/ResizeableBox';
 import ProjectSelectorView from './ProjectSelectorView';
 import ProjectView from './ProjectView';
@@ -11,7 +11,6 @@ const DesktopSite = () => {
   const [noFileFound, setNoFileFound] = useState('');
   const [selectorViewMinimized, setSelectorViewMinimized] = useState(null);
   const [aboutViewMinimized, setAboutViewMinimized] = useState(null);
-  const [unityLoaded, setUnityLoaded] = useState(false);
 
   function selectFile(file) {
     window.history.replaceState(null, "Chloe Sonsteng", `${file['name']}`.replace(/ /g,"_"));
@@ -24,24 +23,11 @@ const DesktopSite = () => {
       window.location.reload();  
       return;    
     }
-
-    if(file['fileType'] === 'unity'){
-      setUnityLoaded(false);
-    }
     
     setSelectedFile(file);
     setNoFileFound('');
   }
 
-  const onUnityLoaded = () => {
-    setUnityLoaded(true);
-  }
-  useEffect(() => {
-    window.addEventListener('unityLoaded', onUnityLoaded);
-    return () => {
-      window.removeEventListener('unityLoaded',onUnityLoaded);
-    }
-  },[])
   return (
     <ResizeableBox 
       horizontal={true} 

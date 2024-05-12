@@ -4,7 +4,7 @@ import LoadingView from "../ViewUtilities/LoadingView";
 const UnityView = ({selectedFile, fullScreen}) => {
 
     const baseURL = `${process.env.REACT_APP_CDN_URL}unity/${selectedFile["fileName"]}/Build/${selectedFile["fileName"]}`;
-    const { unityProvider, isLoaded, loadingProgression, requestFullscreen , unload } = useUnityContext({
+    const { unityProvider, isLoaded, loadingProgression, requestFullscreen } = useUnityContext({
         loaderUrl: baseURL + ".loader.js",
         dataUrl: baseURL + ".data.unityweb",
         frameworkUrl: baseURL + ".framework.js.unityweb",
@@ -24,19 +24,6 @@ const UnityView = ({selectedFile, fullScreen}) => {
         }
     }, [fullScreen, requestFullscreen])
 
-    useEffect(() => {
-        if(isLoaded){
-            window.dispatchEvent(new CustomEvent('unityLoaded'));
-        }
-    }, [isLoaded])
-
-    useEffect( () => {
-        return async () => {
-            if(isLoaded){
-                await unload();
-            }
-        }
-    }, [isLoaded, unload]);
     return (
         
     <div id="unity-container" className="unity-desktop" style={{
