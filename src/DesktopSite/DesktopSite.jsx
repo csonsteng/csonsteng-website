@@ -33,25 +33,6 @@ const DesktopSite = () => {
     setNoFileFound('');
   }
 
-  function onNoFileFound(fileName){
-    setNoFileFound(fileName);
-  }
-
-  function minimizeSelectorView(){
-    setSelectorViewMinimized('35px');
-  }
-
-  function minimizeAboutView(){
-    setAboutViewMinimized('calc(100% - 35px)');
-  }
-
-  function restoreSelectorView(){
-    setSelectorViewMinimized(false);
-  }
-
-  function restoreAboutView(){
-    setAboutViewMinimized(false);
-  }
   const onUnityLoaded = () => {
     setUnityLoaded(true);
   }
@@ -62,14 +43,37 @@ const DesktopSite = () => {
     }
   },[])
   return (
-    <ResizeableBox horizontal={true} defaultSize='27%' element1MinSize={0.1} element2MinSize={0.5} minimized={selectorViewMinimized}
-        element1={<ProjectSelectorView selectFile={selectFile} onMinimize={minimizeSelectorView} onRestore={restoreSelectorView} onNoFileFound={onNoFileFound}/>}
-        element2={noFileFound === '' ?
-            <ResizeableBox horizontal={false} defaultSize='75%' element1MinSize={0.3} element2MinSize={0.1} minimized={aboutViewMinimized}
-            element1={<ProjectView  selectedFile={selectedFile}/>}
-            element2={<AboutView selectedFile={selectedFile} onMinimize={minimizeAboutView} onRestore={restoreAboutView}/>}
+    <ResizeableBox 
+      horizontal={true} 
+      defaultSize='27%' 
+      element1MinSize={0.1} 
+      element2MinSize={0.5} 
+      minimized={selectorViewMinimized}
+      element1={
+        <ProjectSelectorView 
+          selectFile={selectFile} 
+          onMinimize={() => setSelectorViewMinimized('35px')} 
+          onRestore={() => setSelectorViewMinimized(false)}
+          onNoFileFound={setNoFileFound}/>}
+      element2={noFileFound === '' ?
+          <ResizeableBox 
+            horizontal={false} 
+            defaultSize='75%' 
+            element1MinSize={0.3} 
+            element2MinSize={0.1} 
+            minimized={aboutViewMinimized}
+            element1={
+              <ProjectView  
+                selectedFile={selectedFile}
+              />}
+            element2={
+              <AboutView 
+                selectedFile={selectedFile} 
+                onMinimize={() => setAboutViewMinimized('calc(100% - 35px)')} 
+                onRestore={() => setAboutViewMinimized(false)}
+              />}
           /> 
-        : <FileNotFoundView fileName={noFileFound}/>
+          : <FileNotFoundView fileName={noFileFound}/>
       }/>
   );
 }
