@@ -3,15 +3,14 @@
         "name": "Readme",
         "fileName": "Readme",
         "fileType": "md",
-        "year": 2024,
-        "content": "A brief intro about me and my website!\n\nThis place is still a work in progress, but it is miles cooler than my [old one](https://www.csonsteng.com)."
+        "year": 2024
     },
     {
         "name": "Resume",
         "fileName": "Resume",
         "fileType": "pdf",
         "year": 2024,
-        "content": "This is my resume! You can find more details about any specific position under the history tab."
+        "content": "This is my resume! You can find more details about any specific position under Employment History."
     },
     {
         "name": "Games",
@@ -30,6 +29,7 @@
                 "fileName": "GemPuzzle",
                 "fileType": "unity",
                 "year": 2021,
+                "hide": true,
                 "content": "A weird little math puzzle built entirely in Unity UI components for whatever reason. It was an afternoon project one day while I was bored back in 2021."
             },
             {
@@ -65,6 +65,7 @@
                 "fileName": "MountTucker",
                 "fileType": "unity",
                 "year": 2020,
+                "hide": true,
                 "content": "I only uploaded this game as a kick to make myself get back to working on it. It is my oldest game and I was working on it in 2020 before working at DropBears. I haven't picked it back up since I got that job. I have a whole notebook of design to collate and implement. It is inspired by both Twin Peaks and Stardew Valley."
             },
             {
@@ -86,14 +87,14 @@
                 "fileName": "Haefallia",
                 "fileType": "pdf",
                 "year": 2022,
-                "content": "Info about Haefallia"
+                "content": "This is a module I wrote for my Dungeons & Dragons campaign setting. It has 3 new races and a new class plus new subclasses and backgrounds. Formatting was done with [Homebrewery](https://homebrewery.naturalcrit.com/)."
             },
             {
                 "name": "Goravin",
                 "fileName": "Goravin",
                 "fileType": "pdf",
                 "year": 2019,
-                "content": "Info about Goravin"
+                "content": "I really wanted to run a sci-fi/cyberpunk game with my friends. It was before CyberPunk Red was out, so I made my own! We only played it a couple of times before returning to D&D."
             },
             {
                 "name": "Maps",
@@ -106,14 +107,14 @@
                         "fileType": "jpg",
                         "alt": "Custom D&D Region Map",
                         "year": 2020,
-                        "content": "Info about NEGalinndan"
+                        "content": "This is a hand-drawn map for a previous D&D campaign from 2020."
                     },{
                         "name": "NWGalinndan",
                         "fileName": "NWGalinndan",
                         "fileType": "jpg",
                         "alt": "Custom D&D Region Map",
                         "year": 2020,
-                        "content": "Info about NWGalinndan"
+                        "content": "This is a hand-drawn map for a previous D&D campaign from 2020."
                     },
                     {
                         "name": "NWKuali",
@@ -121,7 +122,7 @@
                         "fileType": "jpg",
                         "alt": "Custom D&D Region Map",
                         "year": 2020,
-                        "content": "Info about NWKuali"
+                        "content": "This is a hand-drawn map for a previous D&D campaign from 2020."
                     },
                     {
                         "name": "Kuali-Galinndan",
@@ -129,14 +130,14 @@
                         "fileType": "jpg",
                         "alt": "Custom D&D Region Map",
                         "year": 2020,
-                        "content": "Info about Kuali-Galinndan"
+                        "content": "This is a hand-drawn map for a previous D&D campaign from 2020."
                     }
                 ]
             }
         ]
     },
     {
-        "name": "EmploymentHistory",
+        "name": "Employment History",
         "fileType": "dir",
         "content": 
         [
@@ -144,36 +145,31 @@
                 "name": "Internships",
                 "fileName": "Internships",
                 "fileType": "md",
-                "year": 2012,
-                "content": "About Internships"
+                "year": 2012
             },
             {
-                "name": "AltechAerospace",
+                "name": "Altech Aerospace",
                 "fileName": "Altech",
                 "fileType": "md",
-                "year": 2014,
-                "content": "About Altech"
+                "year": 2014
             },
             {
                 "name": "DigiTop",
                 "fileName": "DigiTop",
                 "fileType": "md",
-                "year": 2018,
-                "content": "About DigiTop"
+                "year": 2018
             },
             {
-                "name": "DropBearsGames",
+                "name": "DropBears Games",
                 "fileName": "DropBears",
                 "fileType": "md",
-                "year": 2020,
-                "content": "About DropBears"
+                "year": 2020
             },
             {
                 "name": "Kodable",
                 "fileName": "Kodable",
                 "fileType": "md",
-                "year": 2022,
-                "content": "About Kodable"
+                "year": 2022
             }
         ]
     }

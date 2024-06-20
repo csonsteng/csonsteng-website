@@ -42,6 +42,7 @@ const DesktopSite = () => {
           onRestore={() => setSelectorViewMinimized(false)}
           onNoFileFound={setNoFileFound}/>}
       element2={noFileFound === '' ?
+          selectedFile != null && selectedFile["content"] ?
           <ResizeableBox 
             horizontal={false} 
             defaultSize='75%' 
@@ -58,7 +59,10 @@ const DesktopSite = () => {
                 onMinimize={() => setAboutViewMinimized('calc(100% - 35px)')} 
                 onRestore={() => setAboutViewMinimized(false)}
               />}
-          /> 
+          /> : 
+          <ProjectView  
+                selectedFile={selectedFile}
+              />
           : <FileNotFoundView fileName={noFileFound}/>
       }/>
   );

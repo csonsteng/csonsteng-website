@@ -28,6 +28,7 @@ const ProjectSelectorView = ({selectFile, onMinimize, onRestore, onNoFileFound})
 
     function displayFile(file, indent, index){  
         return (
+            file["hide"] ? <></>:
             <span 
             style={{
                 textAlign: 'left',
