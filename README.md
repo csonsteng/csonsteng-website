@@ -1,3 +1,7 @@
+# CSONSTENG-WEBSITE
+
+This is the React app set up to host my personal website. It was created with create-react-app. I am leaving the contents of the original readme at the bottom of this for posterity.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
