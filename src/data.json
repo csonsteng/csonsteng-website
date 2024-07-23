@@ -58,7 +58,7 @@
                 "fileName": "Labryinth",
                 "fileType": "unity",
                 "year": 2023,
-                "content": "This is my most recent project. I wanted to play around with procedurally generated geometry and am a fan of both mazes and horror. I really want this game to feel like something could always be around the corner. I want tension without real danger. I have not yet figured out enemy design for that yet. It also definitely needs a better enemy model, and a better way to track your way through the maze. "
+                "content": "This is one of my most recent projects. I wanted to play around with procedurally generated geometry and am a fan of both mazes and horror. I really want this game to feel like something could always be around the corner. I want tension without real danger. I have not yet figured out enemy design for that yet. It also definitely needs a better enemy model, and a better way to track your way through the maze. "
             },
             {
                 "name": "Mount Tucker",
@@ -74,6 +74,13 @@
                 "fileType": "unity",
                 "year": 2021,
                 "content": "I got bored one weekend in 2021 and decided to make a chess engine. The pieces were from the Unity asset store. It currently does not handle pawn promotion or en passant. Also the AI could use some openings and some overall improvement."
+            },
+            {
+                "name": "CorpoHack",
+                "fileName": "CorpoHack",
+                "fileType": "unity",
+                "year": 2024,
+                "content": "I started this project in the summer of 2024, and it is very much in a prototype stage."
             }
         ]
     },
