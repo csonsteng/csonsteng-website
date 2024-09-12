@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import ResizeableBox from '../ViewUtilities/ResizeableBox';
 import ProjectSelectorView from './ProjectSelectorView';
 import ProjectView from './ProjectView';
@@ -11,6 +11,12 @@ const DesktopSite = () => {
   const [noFileFound, setNoFileFound] = useState('');
   const [selectorViewMinimized, setSelectorViewMinimized] = useState(null);
   const [aboutViewMinimized, setAboutViewMinimized] = useState(null);
+
+  useEffect(() => {
+    if (window.location.href.includes("about")){  
+      window.location.replace("https://www.csonsteng.com/Readme");
+    }
+  },[])
 
   function selectFile(file) {
     window.history.replaceState(null, "Chloe Sonsteng", `${file['name']}`.replace(/ /g,"_"));
