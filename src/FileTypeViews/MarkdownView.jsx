@@ -129,7 +129,6 @@ const MarkdownView = ({selectedFile}) => {
                     paramList.forEach((fullParam) => {
                         let splitParam = fullParam.split('=');
                         params[splitParam[0]] = splitParam[1];
-                        console.log(`${splitParam[0]}:${splitParam[1]}`);
                     });
                 }
                 return <img 
@@ -143,6 +142,11 @@ const MarkdownView = ({selectedFile}) => {
                         display: 'block',
                         borderRadius: params.hasOwnProperty('radius') ? `${params['radius']}em`  : '5em',
                 }}/>
+            },
+            a(props){
+                const {_, ...data} = props;
+                const href = data['href']
+                return <a href={href} target={href[0] === '/' ? "_self" : "_blank"}>{data["children"]}</a>
             }
         }}>
             {currentMarkdown}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import dataFile from "../data.json";
 import FramedView from "../ViewUtilities/FramedView";
 
@@ -15,12 +15,12 @@ const ProjectSelectorView = ({selectFile, onMinimize, onRestore, onNoFileFound})
     function unWrapFile(file, indent, index){
         if(file["fileType"] === "dir"){
             return (
-                <>
-                {displayFile(file, indent, index)}
-                {folderStates[index] && (
-                    file["content"].map((subFile, i) => unWrapFile(subFile, indent + 1, `${index}.${i}`))
-                )}
-                </>
+                <Fragment key={file['fileName']}>
+                    {displayFile(file, indent, index)}
+                    {folderStates[index] && (
+                        file["content"].map((subFile, i) => unWrapFile(subFile, indent + 1, `${index}.${i}`))
+                    )}
+                </Fragment>
             )
         }
         return displayFile(file, indent, index);
@@ -28,7 +28,7 @@ const ProjectSelectorView = ({selectFile, onMinimize, onRestore, onNoFileFound})
 
     function displayFile(file, indent, index){  
         return (
-            file["hide"] ? <></>:
+            file["hide"] ? null:
             <span 
             style={{
                 textAlign: 'left',
@@ -51,15 +51,17 @@ const ProjectSelectorView = ({selectFile, onMinimize, onRestore, onNoFileFound})
                 flexDirection: 'row',
                 alignItems: 'center'
             }}>
-                <span>{[...Array(indent+2)].map((_) => '  ')}</span>
-                <img src={`fileicons/${file["fileType"]}.png`} alt='temp' style = {{
-                  height: '2em',
-                  marginRight: '0.5em',
-                }}/>
-                <span style={{
-                    marginTop: '0.25em'
-                }}>{file["name"]}</span>
-                </pre></span>
+                    <span key="indentation">{[...Array(indent+2)].map((_) => '  ')}</span>
+                    <img key="image" src={`fileicons/${file["fileType"]}.png`} alt='temp' style = {{
+                    height: '2em',
+                    marginRight: '0.5em',
+                    }}/>
+                    <span key="filename" style={{
+                        marginTop: '0.25em'
+                    }}>{file["name"]}
+                    </span>
+                </pre>
+            </span>
         )
     }
 
@@ -125,7 +127,7 @@ const ProjectSelectorView = ({selectFile, onMinimize, onRestore, onNoFileFound})
                 </div>
                 }
                 />
-                </div>
+        </div>
     )
 }
 

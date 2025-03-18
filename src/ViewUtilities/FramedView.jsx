@@ -25,7 +25,7 @@ const FramedView = ({ content , title, onFullScreen, onMinimize, onRestore, onNe
                 fontSize: '1.1em',
                 
             }}>
-                <span style={{
+                <span key="title" style={{
                     display: 'inline-block',
                     width: '50%',
                     marginLeft: '25%',
@@ -35,7 +35,7 @@ const FramedView = ({ content , title, onFullScreen, onMinimize, onRestore, onNe
                 }}>
                     {minimized && verticalMinimize ? '' : title}
                 </span>
-                <span style={{
+                <span key="content" style={{
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'row-reverse',
